@@ -1,0 +1,278 @@
+import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+:root {
+  --primary-color: #a855f7;
+  --primary-color-dark: #9333ea;
+  --secondary-color: #ca8a04;
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --extra-light: #faf5ff;
+  --max-width: 1200px;
+}
+
+* {
+  padding: 0 0rem;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  z-index: 99;
+}
+
+.nav__content {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1.2rem 1.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+}
+
+nav .logo a {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  transition: 0.3s;
+}
+nav .logo a:hover {
+  color: var(--primary-color-dark);
+}
+
+nav .checkbox {
+  display: none;
+}
+
+nav input {
+  display: none;
+}
+nav .checkbox i {
+  font-size: 2rem;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+  transition: none;
+}
+
+ul li a {
+  padding: 0.5rem 1rem;
+  border: 2px solid transparent;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--text-dark);
+  transition: none;
+}
+
+ul li a:hover,
+ul li a.active {
+  border-bottom: 0.1rem solid cyan;
+  color: #30c5cf;
+}
+
+.portfolio {
+  background: transparent;
+}
+
+.blink{
+  color:#30c5cf ;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  animation: blink 2s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;   
+}
+
+@keyframes blink {
+  50% {
+      opacity: 0;
+  }
+  
+}
+
+.portfolio-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 2.5rem;
+} 
+
+.portfolio-container .portfolio-box {
+  position: relative;
+  border-radius: 4rem;
+  box-shadow: 0 0 1rem transparent;
+  overflow: hidden;
+  display: flex;
+}
+
+.portfolio-box img {
+  border-radius: 3rem;
+  width: 100%;
+  height: 50%;
+  transition: .5s ease;
+}
+
+.portfolio-box:hover img {
+  transform: scale(1.1);
+}
+
+.portfolio-box .portfolio-layer {
+  color: white;
+  position: absolute;
+  top: 1rem;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(cyan), var(cyan));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 4rem;
+  transform: translateY(100%);
+  transition: .5s ease;
+}
+
+.portfolio-box:hover .portfolio-layer {
+  transform: translateY(0%);
+}
+
+.portfolio-layer h4 {
+  font-size: 1.2rem;
+}
+
+.portfolio-layer p {
+  font-size: .9rem;
+  margin: .3rem 0 1rem;
+}
+
+.portfolio-layer a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  background: transparent;
+  border-radius: 50%;
+}
+
+.portfolio-layer a img {
+  font-size: 2rem;
+  color: solid cyan;
+} 
+
+@media (width < 750px) {
+  * {
+    padding: 0 0rem;
+  }
+  
+  .nav__content {
+    padding-left: 0 0rem;
+    list-style: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: #f9f9f9;
+  }
+
+  nav .checkbox {
+    display: block;
+  }
+
+  ul {
+    position: absolute;
+    width: 100%;
+    height: calc(70vh - 85px);
+    left: -100%;
+    top: 85px;
+    background-color:  cyan;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  nav #check:checked ~ ul {
+    left: 0;
+  }
+
+  ul li a {
+    font-size: 1.25rem;
+  }
+
+  .section__container {
+    padding: 10rem 1rem 5rem 1rem;
+    text-align: center;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .image {
+    grid-area: 1/1/2/2;
+  }
+
+  .action__btns {
+    margin: auto;
+  }
+}
+
+@media (max-width: 991px) {
+  .header {
+    padding: 2rem 3%;
+  }
+  .section {
+    padding: .1rem 3% 1rem;
+  }
+  .footer {
+    padding: 2rem 3%;
+  }
+}
+
+@media (max-width: 768px) {
+  #menu-icon {
+    display: block;
+  }
+
+  .navbar {
+    position: 10%;
+    top: 10%;
+    left: 0;
+    width: 10;
+    padding: 1rem 3%;
+    background: var(--bg-color);
+    border-top: .1rem solid rgb(0, 0, 0, .2);
+    box-shadow: 0 .5rem 1rem rgb(0, 0, 0, .2);
+  }
+  .navbar a {
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
+  }
+}
+
+@media (max-width: 617px) {
+  .portfolio-container {
+    grid-template-columns: 1fr;
+  }
+}
