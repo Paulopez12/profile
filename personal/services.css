@@ -1,0 +1,244 @@
+import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+:root {
+  --primary-color: #a855f7;
+  --primary-color-dark: #9333ea;
+  --secondary-color: #ca8a04;
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --extra-light: #faf5ff;
+  --max-width: 1200px;
+}
+
+* {
+  padding: 0 0rem;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  z-index: 99;
+}
+
+.nav__content {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1.2rem 1.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: #f9f9f9;
+}
+
+nav .logo a {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  transition: 0.3s;
+}
+nav .logo a:hover {
+  color: var(--primary-color-dark);
+}
+
+nav .checkbox {
+  display: none;
+}
+
+nav input {
+  display: none;
+}
+nav .checkbox i {
+  font-size: 2rem;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+  transition: none;
+}
+
+ul li a {
+  padding: 0.5rem 1rem;
+  border: 2px solid transparent;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--text-dark);
+  transition: none;
+}
+
+ul li a:hover,
+ul li a.active {
+  border-bottom: 0.1rem solid cyan;
+  color: #30c5cf;
+}
+
+.sports {
+  margin-bottom: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; 
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+.heading {
+  margin-top: 7rem;
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+.sports-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  gap: 1rem;
+  justify-content: center; 
+}
+
+.sports-container .sports-box {
+  background: transparent;
+  padding: 2rem 2rem 1rem;
+  border-radius: 2rem;
+  text-align: center;
+  border: 0.2rem solid cyan;
+  transition: 0.5s;
+}
+
+
+.sports-container .sports-box:hover {
+  border-color: cyan;
+  transform: scale(1.02);
+}
+
+.sports-box h3 {
+  font-size: 2rem;
+}
+
+.sports-box p {
+  font-size: 1rem;
+  margin: 1rem 1rem 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  background: rgb(255, 255, 255);
+  border-radius: 4rem;
+  border: 1px solid cyan;
+  box-shadow: 0 0 0.5rem cyan;
+  font-size: 0.875rem; 
+  color: black;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0.5rem 35%;
+  background: transparent;
+}
+
+footer-text p {
+  font-size: .1rem;
+}
+
+@media (width < 750px) {
+  * {
+    padding: 0 0rem;
+  }
+  
+  .nav__content {
+    padding-left: 0 0rem;
+    list-style: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: #f9f9f9;
+  }
+  nav .checkbox {
+    display: block;
+  }
+
+  ul {
+    position: absolute;
+    width: 100%;
+    height: calc(70vh - 85px);
+    left: -100%;
+    top: 85px;
+    background-color:  cyan;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  nav #check:checked ~ ul {
+    left: 0;
+  }
+
+  ul li a {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .header {
+    padding: 2rem 3%;
+  }
+  .section {
+    padding: .1rem 3% 1rem;
+  }
+  .sports {
+    padding-bottom: 7rem;
+  }
+  .footer {
+    padding: 2rem 3%;
+  }
+}
+
+@media (max-width: 768px) {
+  #menu-icon {
+    display: block;
+  }
+
+  .navbar {
+    position: 10%;
+    top: 10%;
+    left: 0;
+    width: 10;
+    padding: 1rem 3%;
+    background: var(--bg-color);
+    border-top: .1rem solid rgb(0, 0, 0, .2);
+    box-shadow: 0 .5rem 1rem rgb(0, 0, 0, .2);
+  }
+  .navbar a {
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
+  }
+
+  .sports h2 {
+    margin-bottom: 3rem;
+  }
+ 
+}
